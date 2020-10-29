@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Area2D.gd" type="Script" id=2]
+[ext_resource path="res://Tasks.png" type="Texture" id=3]
+[ext_resource path="res://Capture3e.PNG" type="Texture" id=4]
+[ext_resource path="res://task2.gd" type="Script" id=5]
+[ext_resource path="res://task3.gd" type="Script" id=6]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 112.257
+
+[node name="World" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1716.83, 816.271 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="Church" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 0, 32 )
+polygon = PoolVector2Array( 1084.02, 755.297, 1537.35, 755.638, 1537.68, 617.482, 1531.01, 617.815, 1530.68, 747.962, 1089.02, 749.958, 1089.35, 554.404, 1538.02, 555.745, 1537.35, 547.736, 1083.35, 547.396 )
+
+[node name="Library" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( 1538.62, 572.266, 1206.75, 572.266, 1206.37, 428.054, 1537.5, 428.054, 1537.87, 481.619, 1531.13, 481.619, 1531.51, 433.673, 1212.74, 434.422, 1213.49, 566.273, 1531.51, 566.273, 1531.13, 518.327, 1539, 518.702 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2( 1588.72, 617.657 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+show_behind_parent = true
+position = Vector2( 1587.94, 624.494 )
+scale = Vector2( 0.201002, 0.201002 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 3 )
+vframes = 2
+hframes = 2
+
+[node name="Sprite2" type="Sprite" parent="Node2D"]
+position = Vector2( 1590.82, 528.002 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/Sprite2"]
+margin_left = -39.7627
+margin_top = -25.0034
+margin_right = 42.2373
+margin_bottom = 20.9966
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Good Job!
+Task 1/1 
+Completed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D2"]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Area2D"]
+position = Vector2( 2416.26, 811.907 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Node2D2"]
+show_behind_parent = true
+position = Vector2( 2417.83, 816.139 )
+scale = Vector2( 0.201002, 0.201002 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 3 )
+vframes = 2
+hframes = 2
+frame = 2
+
+[node name="Sprite2" type="Sprite" parent="Node2D2"]
+position = Vector2( 2513.48, 807.495 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2/Sprite2"]
+margin_left = -39.7627
+margin_top = -25.0034
+margin_right = 42.2373
+margin_bottom = 20.9966
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D3"]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/Area2D"]
+position = Vector2( 242.389, 1227.18 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Node2D3"]
+show_behind_parent = true
+position = Vector2( 241.609, 1228.36 )
+scale = Vector2( 0.201002, 0.201002 )
+texture = ExtResource( 3 )
+normal_map = ExtResource( 3 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="Sprite2" type="Sprite" parent="Node2D3"]
+position = Vector2( 148.322, 1226.62 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D3/Sprite2"]
+margin_left = -39.7627
+margin_top = -25.0034
+margin_right = 42.2373
+margin_bottom = 20.9966
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
